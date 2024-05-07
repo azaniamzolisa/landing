@@ -14,11 +14,11 @@
 /* Utilities */
 body {
   margin: 0;
-  font-family: 'Times New Roman', Times, serif;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h1, h2, h3, h4 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 a {
@@ -27,4 +27,56 @@ a {
 
 .text-center {
   text-align: center;
+}
+
+
+/* Banner Styles */
+.banner {
+  height: 50vh; /* Set the banner height to cover the entire viewport */
+  background-size: cover;
+  background-position: center;
+  /* position: relative; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.banner-content {
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.banner h1 {
+  font-size: 6rem; /* Increased font size for emphasis */
+  text-shadow: 0 0 10px rgba(0,0,0,0.5), /* Added a subtle shadow */
+               0 0 20px rgba(0,0,0,0.5), /* Enhanced the shadow for depth */
+               0 0 30px rgba(0,0,0,0.5); /* Further enhanced the shadow */
+  color: transparent; /* Set text color to transparent */
+  -webkit-text-stroke: 2px white; /* Added a white stroke around the text */
+  -moz-text-stroke: 2px white;
+  -ms-text-stroke: 2px white;
+  -o-text-stroke: 2px white;
+  text-stroke: 2px white;
+}
+
+/* Parallax Effect */
+.banner::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and transparency */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  z-index: -1;
+  transform: translateY(-50%);
+}
+
+.banner {
+  background-attachment: fixed;
 }
